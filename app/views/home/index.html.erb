@@ -1,0 +1,13 @@
+
+    <h2> Hello world and welcome to QueueA!</h2>
+    This app is about remembering stuff<br>
+    Content comming soon
+    <br><br>
+    12:36 - 16 April 2012 
+
+    <% if user_signed_in? %>
+    	<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+    <% else %>
+    	<%= link_to('Sign in', user_session_path) %> 
+    	<%= link_to('Sign up', new_user_registration_path) %>
+    <% end %>
