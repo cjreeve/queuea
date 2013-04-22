@@ -1,10 +1,16 @@
 Queuea::Application.routes.draw do
 
+  get "users/show"
+
   get "home/index"
 
   devise_for :users
 
+  #root :to => "home#index"
+  root :to => "users#show", :constraints => {user_signed_in?}
   root :to => "home#index"
+
+  resources :users
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
