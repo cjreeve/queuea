@@ -1,5 +1,8 @@
 Queuea::Application.routes.draw do
 
+  resources :nuggets
+
+
   get "users/show"
 
   get "home/index"
@@ -12,7 +15,9 @@ Queuea::Application.routes.draw do
   end
   root :to => "home#index"
 
-  resources :users
+  resources :users do
+    resources :nuggets
+  end
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

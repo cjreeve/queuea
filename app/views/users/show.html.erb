@@ -6,4 +6,25 @@
   <b>Email:</b>
   <%= @user.email %>
 </p>
-<%= link_to @user.username, @user %> <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+
+<table>
+  <tbody>
+    <% @nuggets.each do |nugget| %>
+    <tr>
+      <td><%= nugget.question %></td>
+      <td><%= nugget.answer %></td>
+      <td><%#= nugget.user_id %></td>
+      <td><%#= link_to 'Show', nugget %></td>
+      <td><%= link_to 'Edit', edit_nugget_path(nugget) %></td>
+      <%# binding.pry %>
+      <td><%= link_to 'Delete', user_nugget_path(nugget.user,nugget), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to @user.username, @user %> 
+<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+<%= link_to('Shared Nuggets', nuggets_path) %>
+<%= link_to('New Nugget', new_nugget_path) %>

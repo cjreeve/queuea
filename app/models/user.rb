@@ -29,4 +29,6 @@ class User < ActiveRecord::Base
     	username
     end
 
+    has_many :nuggets
+
 end
