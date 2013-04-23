@@ -1,0 +1,9 @@
+<h1>User: <%= @user.username %></h1>
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+<%= link_to @user.username, @user %> <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
