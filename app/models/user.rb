@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
 	attr_accessor :login
 	attr_accessible :login
 
+	validates_uniqueness_of :username, case_sensitive: false
 
 
     def self.find_first_by_auth_conditions(warden_conditions)
