@@ -1,3 +1,5 @@
+
+
 <h1>User: <%= @user.username %></h1>
 <p id="notice"><%= notice %></p>
 
@@ -23,8 +25,9 @@
   </tbody>
 </table>
 
-
-<%= link_to @user.username, @user %> 
-<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-<%= link_to('Shared Nuggets', nuggets_path) %>
-<%= link_to('New Nugget', new_nugget_path) %>
+<footer>
+  <%= link_to @user.username, @user %> 
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+  <%= link_to('Shared Nuggets', nuggets_path) %>
+  <%= link_to('New Nugget', new_nugget_path) %>
+</footer>

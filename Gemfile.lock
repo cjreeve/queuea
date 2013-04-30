@@ -31,6 +31,9 @@ GEM
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     bootstrap-sass (2.1.0.0)
+    bourbon (3.1.1)
+      sass (>= 3.2.0)
+      thor
     builder (3.0.4)
     capybara (1.1.2)
       mime-types (>= 1.16)
@@ -73,6 +76,9 @@ GEM
     method_source (0.8.1)
     mime-types (1.22)
     multi_json (1.7.2)
+    neat (1.2.0)
+      bourbon (>= 2.1)
+      sass (>= 3.2)
     nokogiri (1.5.9)
     orm_adapter (0.4.0)
     pg (0.12.2)
@@ -157,10 +163,12 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (= 2.1)
+  bourbon
   capybara (= 1.1.2)
   coffee-rails (= 3.2.2)
   devise
   jquery-rails (= 2.0.2)
+  neat
   pg (= 0.12.2)
   pry
   rails (= 3.2.13)
