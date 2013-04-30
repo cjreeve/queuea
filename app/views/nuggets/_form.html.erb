@@ -1,4 +1,5 @@
-<%= form_for(@nugget) do |f| %>
+<% @nugget.tags.build %>
+<%= form_for(@nugget) do |nugget_form| %>
   <% if @nugget.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@nugget.errors.count, "error") %> prohibited this nugget from being saved:</h2>
@@ -12,18 +13,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :question %><br />
-    <%= f.text_field :question %>
+    <%= nugget_form.label :question %><br />
+    <%= nugget_form.text_field :question %>
   </div>
   <div class="field">
-    <%= f.label :answer %><br />
-    <%= f.text_field :answer %>
+    <%= nugget_form.label :answer %><br />
+    <%= nugget_form.text_field :answer %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.hidden_field :user_id %>
+    <%#= nugget_form.label :user_id %><br />
+    <%= nugget_form.hidden_field :user_id %>
   </div>
+  <%= render :partial => 'tags/form',
+             :locals => {:form => nugget_form} %>
   <div class="actions">
-    <%= f.submit %>
+    <%= nugget_form.submit %>
   </div>
 <% end %>

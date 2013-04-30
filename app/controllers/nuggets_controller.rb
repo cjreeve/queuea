@@ -44,11 +44,13 @@ class NuggetsController < ApplicationController
   # POST /nuggets
   # POST /nuggets.json
   def create
+    binding.pry
     @nugget = Nugget.new(params[:nugget])
+    @user = current_user
 
     respond_to do |format|
       if @nugget.save
-        format.html { redirect_to @nugget, notice: 'Nugget was successfully created.' }
+        format.html { redirect_to @user, notice: 'Nugget was successfully created.' }
         format.json { render json: @nugget, status: :created, location: @nugget }
       else
         format.html { render action: "new" }
@@ -63,6 +65,7 @@ class NuggetsController < ApplicationController
     @nugget = Nugget.find(params[:id])
 
     respond_to do |format|
+      #binding.pry
       if @nugget.update_attributes(params[:nugget])
         format.html { redirect_to @nugget, notice: 'Nugget was successfully updated.' }
         format.json { head :no_content }

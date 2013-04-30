@@ -12,7 +12,12 @@
 
 <p>
   <b>User:</b>
-  <%= @nugget.user_id %>
+  <%= @nugget.user.username %>
+</p>
+
+<p>
+  <b>Tags:</b>
+  <%= @nugget.tags.map { |t| t.name }.join(", ") %>
 </p>
 
 

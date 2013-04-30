@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130423114704) do
+ActiveRecord::Schema.define(:version => 20130430112723) do
 
   create_table "nuggets", :force => true do |t|
     t.string   "question"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(:version => 20130423114704) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "tags", :force => true do |t|
+    t.string   "name"
+    t.integer  "nugget_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "tags", ["nugget_id"], :name => "index_tags_on_nugget_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
